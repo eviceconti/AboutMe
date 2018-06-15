@@ -1,0 +1,158 @@
+/*variables setup
+does not work with media queries*/
+:root {
+
+  /*colors*/
+  --color-primary: #a97d19;
+  --color-secondary: #101d2c;
+  --color-secondary-dark: #050311;
+  --color-grey-light-1: #ccc;
+  --color-grey-light-2: #999;
+  --color-grey-dark-1: #54483A;
+  --color-grey-dark-2: #6D5D4B;
+
+  /*fonts*/
+  --font-main: 'Nunito', sans-serif;
+  --font-logo: 'Poiret One', cursive;
+  
+  /*shadow boxes*/
+  --shadow-box-dark: 0 2rem 6rem 
+  rgba(0, 0, 0, .3);
+  --shadow-box-light: 0 2rem 5rem rgba(0, 0, 0, .1);
+
+  /*border line*/
+  --line: 1px solid var(--color-grey-light-2);
+}  
+
+//SASS Variables
+$color-primary: #a97d19;
+$color-secondary: #101d2c;
+$color-secondary-dark: #050311;
+$color-grey-light-1: #ccc;
+$color-grey-light-2: #999;
+$color-grey-dark-1: #54483A;
+$color-grey-dark-2: #6D5D4B;
+
+//Media Queries
+$large-bp: 67.5em; // 1080px/16px
+$medium-bp: 53.9em; // 864px/16px
+$small-bp: 37.5em; // 600px/16px
+$smallest-bp: 29em; // 464px/16px
+
+/*reset*/ 
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*, 
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+/*end of reset*/
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1rem = 10px*/
+
+  @media  only screen and (max-width: $large-bp) {
+    font-size: 50%; //1rem = 8px
+  }
+}
+
+body {
+  font-family: var(--font-main);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-grey-dark-2);
+  background-image: linear-gradient(to right top, rgba($color-secondary-dark,1), rgba($color-secondary,1));
+  min-height: 100vh;
+
+  max-width: 100%;
+  overflow-x: hidden;
+} 
+
+//typography
+h1 {
+  font-size: 3.5rem;
+  font-weight: 300;
+  text-align: center;
+  color: var(--color-primary);
+
+  @media  only screen and (max-width: $small-bp) {
+    font-size: 3.2rem;
+  }
+}
+
+h2 {
+
+  q {
+    font-size: 3rem;
+    font-weight: 300;
+    text-align: center;
+    color: var(--color-primary);
+  }
+}
+
+.heading {
+  font-size: 4rem;
+  color: var(--color-grey-dark-2);
+  
+  
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-column-gap: 2rem;
+  
+  &::before,
+  &::after {
+    content: "";
+    height: 1px;
+    width: 100%;
+    background-color: currentColor;
+    align-self: center;
+  }
+}
+
+.popup {
+
+  &__title {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+
+    p {
+      font-size: 1.4rem;
+      font-weight: 300;
+    }
+  }
+}
+
+.story {
+
+  &__title {
+    font-size: 2.4rem;
+    //text-align: center;
+    margin-bottom: 1rem;
+    color: var(--color-grey-dark-2);
+  }
+
+  &__description {
+
+    p {
+      font-size: 1.7rem;
+      font-weight: 300;
+      color: var(--color-secondary);
+      
+    }
+  }
+}
+
+
+//Utilities
+
+.mt-large{ margin-top: 5rem; }
+.mt-medium{ margin-top: 3rem; }
